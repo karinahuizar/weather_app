@@ -1,0 +1,68 @@
+.container {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(251, 222, 238) 15.6%,
+    rgb(206, 201, 226) 80.3%
+  );
+   padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+p {
+  font-size: small;
+}
+
+.fa-search {
+  font-size: 20px;
+}
+
+.city {
+margin: 0%;
+font-size: 30px;
+}
+#currentDate {
+  font-size: 15px;
+padding top: 0px;
+}
+#currentTime {
+  font-size: 15px;
+}
+
+.fa-cloud-sun {
+  font-size: 100px;
+  
+  color: #f7ef5d;
+}
+
+.number {
+  font-size: 80px;
+ 
+}
+
+.temp {
+  text-align: right;
+}
+
+.info {
+}
+
+.fa-sun {
+  font-size: 30px;
+  color: #f4cc5d;
+}
+
+.fa-cloud-sun-rain {
+  font-size: 30px;
+  color: #6088c9;
+}
+
+.fa-wind {
+  font-size: 30px;
+  color: #898989;
+}
+
+.col-sm {
+  text-align: center;
+}
