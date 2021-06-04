@@ -74,3 +74,12 @@ p {
 .col-sm {
   text-align: center;
 }
+
+.col-sm .active {
+  color: black;
+  cursor: default;
+}
+
+.col-sm .active {
+  text-decoration: none;
+}
