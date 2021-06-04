@@ -4,7 +4,7 @@
     rgb(251, 222, 238) 15.6%,
     rgb(206, 201, 226) 80.3%
   );
-   padding: 15px;
+  padding: 15px;
   margin: 20px auto;
   border-radius: 10px;
   max-width: 600px;
@@ -20,22 +20,20 @@ p {
 }
 
 .city {
-margin: 0%;
-margin-top: 60px;
-font-size: 30px;
-font-family: FreeMono, monospace;
+  margin: 0%;
+  margin-top: 60px;
+  font-size: 30px;
+  font-family: FreeMono, monospace;
 }
 
 #currentDate {
-font-size: 15px;
-padding top: 0px;
-font-family: FreeMono, monospace;
-
+  font-size: 15px;
+  padding-top: 0px;
+  font-family: FreeMono, monospace;
 }
 
 #currentTime {
   font-size: 15px;
-
 }
 
 .mb-2 {
@@ -45,11 +43,9 @@ font-family: FreeMono, monospace;
 }
 
 .mb-2:hover {
-  background-color: #D8CDE3;
+  background-color: #d8cde3;
   border-color: white;
 }
-
-
 
 .number {
   font-size: 80px;
@@ -58,9 +54,6 @@ font-family: FreeMono, monospace;
 
 .temp {
   text-align: right;
-}
-
-.info {
 }
 
 .fa-sun {

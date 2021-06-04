@@ -13,9 +13,7 @@ function handleSubmit(event) {
   searchAnswer.innerHTML = searchResult;
   searchCity(searchResult);
 }
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
-searchCity("Oklahoma City");
+
 // Feature #1
 let now = new Date();
 let date = now.getDate();
@@ -36,10 +34,13 @@ let hora = document.querySelector("#currentTime");
 dia.innerHTML = `${day}, ${hour}:${minute}`;
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
+  let temperature = Math.round(fahrenheitTemperature);
   let city = response.data.name;
   let h1 = document.querySelector("h1");
   let iconElement = document.querySelector("#icon");
+
+  fahrenheitTemperature = response.data.main.temp;
+
   h1.innerHTML = city;
   document.querySelector(".number").innerHTML = temperature;
 
@@ -64,3 +65,19 @@ function currentLocation(position) {
   axios.get(apiUrl).then(showTemperature);
 }
 navigator.geolocation.getCurrentPosition(currentLocation);
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML - celsiusTemperature;
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let fahrenheitTemperature = null;
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+searchCity("Oklahoma City");
