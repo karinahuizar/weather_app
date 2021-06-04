@@ -8,6 +8,7 @@
   margin: 20px auto;
   border-radius: 10px;
   max-width: 600px;
+  font-family: FreeMono, monospace;
 }
 
 p {
@@ -20,25 +21,46 @@ p {
 
 .city {
 margin: 0%;
+margin-top: 60px;
 font-size: 30px;
+font-family: FreeMono, monospace;
 }
+
 #currentDate {
-  font-size: 15px;
+font-size: 15px;
 padding top: 0px;
+font-family: FreeMono, monospace;
+
 }
+
 #currentTime {
   font-size: 15px;
+
+}
+
+.fa-search {
+  color: red;
+}
+
+.mb-2 {
+  background-color: #FADDEE;
+  border-color: white;
+}
+
+.mb-2:hover {
+  background-color: #D8CDE3;
+  border-color: white;
 }
 
 .fa-cloud-sun {
   font-size: 100px;
-  
   color: #f7ef5d;
+  margin-bottom: 20px;
 }
 
 .number {
   font-size: 80px;
- 
+  margin-bottom: auto;
 }
 
 .temp {
