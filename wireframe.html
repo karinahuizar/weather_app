@@ -24,24 +24,29 @@
       <div class="row">
         <div class="col-9">
           <form class="search-form" id="search-form">
+            <div class="row">
+              <div class="col-9">
             <input
               type="search"
               id="search-city"
               class="form-control"
               placeholder="Enter your city"
             />
+            </div>
+            <div class="col-3">
             <input type="submit" value="Search" class="btn btn-primary mb-2" />
+          </div>
+          </div>
           </form>
         </div>
       </div>
-
       <div class="row">
         <div class="col-sm">
           <h1 class="city" id="now-city"></h1>
           <p id="currentDate"></p>
           <p id="currentTime"></p>
           <br />
-          <img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png" class="fas fa-cloud-sun" id="icon"></i>
+          <img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png" id="icon"></i>
           <p id="description"></p>
           <a class="number"></a>°F | °C
           <p class="info">
