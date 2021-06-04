@@ -34,10 +34,12 @@ let day = days[now.getDay()];
 let dia = document.querySelector("#currentDate");
 let hora = document.querySelector("#currentTime");
 dia.innerHTML = `${day}, ${hour}:${minute}`;
+
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let city = response.data.name;
   let h1 = document.querySelector("h1");
+  let iconElement = document.querySelector("#icon");
   h1.innerHTML = city;
   document.querySelector(".number").innerHTML = temperature;
 
@@ -47,7 +49,12 @@ function showTemperature(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
+
 function currentLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
