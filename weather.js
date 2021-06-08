@@ -33,6 +33,33 @@ let dia = document.querySelector("#currentDate");
 let hora = document.querySelector("#currentTime");
 dia.innerHTML = `${day}, ${hour}:${minute}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+            <div class="weather-forecast-date">${day}</div>
+          <br />
+          <i class="fas fa-sun"></i>
+          <br />
+          <br />
+          <div class="weather-forecast-temperature">
+          <span class="weather-forecast-temperature-max">25°</span>|
+          <span class="weather-forecast-temperature-min">10°</span>
+          </div>
+        </div>
+      </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   let temperature = Math.round(fahrenheitTemperature);
   let city = response.data.name;
@@ -95,3 +122,5 @@ let fahrenheitTemperature = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 searchCity("Oklahoma City");
+
+displayForecast();
