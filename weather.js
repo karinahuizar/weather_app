@@ -33,11 +33,13 @@ let dia = document.querySelector("#currentDate");
 let hora = document.querySelector("#currentTime");
 dia.innerHTML = `${day}, ${hour}:${minute}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row">`;
   let days = ["Mon", "Tue", "Wed", "Thu"];
+
+  let forecastHTML = `<div class="row">`;
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
@@ -51,13 +53,19 @@ function displayForecast() {
           <div class="weather-forecast-temperature">
           <span class="weather-forecast-temperature-max">25°</span>|
           <span class="weather-forecast-temperature-min">10°</span>
-          
         </div>
       </div>`;
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "4f894c5c0cfd49cc623438c61c83e0ef";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiURL).then(displayForecast);
 }
 
 function showTemperature(response) {
@@ -81,6 +89,8 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 function currentLocation(position) {
@@ -122,5 +132,3 @@ let fahrenheitTemperature = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 searchCity("Oklahoma City");
-
-displayForecast();
