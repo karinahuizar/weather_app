@@ -1,14 +1,17 @@
 .container {
+  margin: 20px auto;
+  max-width: 600px;
+  font-family: FreeMono, monospace;
+}
+
+.weather-app {
   background: radial-gradient(
     circle at 10% 20%,
     rgb(251, 222, 238) 15.6%,
     rgb(206, 201, 226) 80.3%
   );
   padding: 15px;
-  margin: 20px auto;
   border-radius: 10px;
-  max-width: 600px;
-  font-family: FreeMono, monospace;
 }
 
 p {
@@ -16,14 +19,6 @@ p {
 }
 
 small {
-  font-family: FreeMono, monospace;
-}
-
-.source {
-  padding: 15px;
-  margin: 20px auto;
-  border-radius: 10px;
-  max-width: 600px;
   font-family: FreeMono, monospace;
 }
 
